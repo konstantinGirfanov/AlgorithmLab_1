@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithLab_1", "AlgorithLab_1\AlgorithLab_1.csproj", "{7FB50521-ACC7-44F7-80C2-D44D54EA6CEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FB50521-ACC7-44F7-80C2-D44D54EA6CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB50521-ACC7-44F7-80C2-D44D54EA6CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB50521-ACC7-44F7-80C2-D44D54EA6CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB50521-ACC7-44F7-80C2-D44D54EA6CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB844F58-69AC-4A9B-82F9-FA6140542AF7}
+	EndGlobalSection
+EndGlobal
