@@ -1,13 +1,11 @@
-﻿namespace AlgorithLab_1;
-
-class Pow
+﻿class Pow
 {
     public static int ObviousPow(int num, int degree)
     {
         int result = 1;
         int k = 0;
 
-        while(k < degree)
+        while (k < degree)
         {
             result *= num;
             k++;
@@ -18,7 +16,7 @@ class Pow
 
     public static int RecPow(int num, int degree)
     {
-        if(degree == 0)
+        if (degree == 0)
         {
             return 1;
         }
@@ -26,7 +24,7 @@ class Pow
         {
             int result = RecPow(num, degree / 2);
 
-            if(degree % 2 == 1)
+            if (degree % 2 == 1)
             {
                 result = result * result * num;
             }
@@ -38,14 +36,14 @@ class Pow
             return result;
         }
     }
-    
+
     public static int QuickPow(int num, int degree)
     {
         int c = num;
         int k = degree;
         int result;
 
-        if(k % 2 == 1)
+        if (k % 2 == 1)
         {
             result = c;
         }
@@ -59,7 +57,7 @@ class Pow
             k /= 2;
             c *= c;
 
-            if(k % 2 == 1)
+            if (k % 2 == 1)
             {
                 result *= c;
             }
@@ -76,7 +74,7 @@ class Pow
         int result = 1;
         int k = degree;
 
-        while(k != 0)
+        while (k != 0)
         {
             if (k % 2 == 0)
             {

@@ -1,6 +1,4 @@
-﻿namespace AlgorithLab_1;
-
-class MultiplyMatrix
+﻿class MultiplyMatrix
 {
     public static int[,] GenerateMatrix(int n)
     {
