@@ -1,6 +1,6 @@
 namespace AlgorythmLab1;
 
-public class QuickSort : ISortable
+public class QuickSort : Sorter
 {
     public static int[] Sort(int[] arr)
     {
