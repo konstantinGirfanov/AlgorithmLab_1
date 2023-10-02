@@ -1,3 +1,6 @@
+using AlgorithLab_1;
+using System.Diagnostics;
+
 namespace AlgorythmLab1;
 
 public class BubbleSort : ISortable
@@ -18,4 +21,16 @@ public class BubbleSort : ISortable
             }
         }
     }
+    public static long Timer(int variableCount)
+    {
+        int[] randomArray = Program.RandomArray(variableCount);
+        Stopwatch timer = new();
+
+        timer.Start();
+        Sort(randomArray);
+        timer.Stop();
+
+        return timer.ElapsedMilliseconds;
+    }
 }
+   
