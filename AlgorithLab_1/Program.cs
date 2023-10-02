@@ -3,7 +3,7 @@ using System.IO;
 
 namespace AlgorithLab_1
 {
-    internal class Program
+    class Program
     {
         public static string SavePath = "C:\\Users\\User\\Desktop";
         static void Main()
@@ -20,7 +20,7 @@ namespace AlgorithLab_1
                 new MenuItem("ExchangeSort algorithm", "exchange"),
                 new MenuItem("QuickSort algorithm", "quick"),
                 new MenuItem("BubbleSort algorithm", "bubble"),
-                new MenuItem("Change save path", "path"),
+                new MenuItem($"Change save path (Current path: {SavePath})", "path"),
                 new MenuItem("Exit", "exit")
             };
             Menu menu = new Menu(menuItems);
@@ -60,9 +60,27 @@ namespace AlgorithLab_1
             }
             return true;
         }
-        private static void ChangeTheSavePath()
+
+        public static void ChangeTheSavePath()
         {
-            //сделать
+            Console.Clear();
+            Console.WriteLine("Введите новый путь для сохранения данных:");
+
+            string newPath = Console.ReadLine();
+            while(!IsCorrectPath(newPath))
+            {
+                Console.Clear();
+                Console.WriteLine("Введённый путь не существует, введите заново:");
+                newPath = Console.ReadLine();
+            }
+
+            SavePath = newPath;
+        }
+
+        private static bool IsCorrectPath(string input)
+        {
+            return Directory.Exists(input);
+
         }
         public static int[] RandomArray(int length)
         {

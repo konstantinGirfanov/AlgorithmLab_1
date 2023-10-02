@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.ExceptionServices;
 
 namespace AlgorithLab_1
 {
@@ -27,6 +28,18 @@ namespace AlgorithLab_1
                         break;
                     case ConsoleKey.Enter:
                         if (menu.Items[menu.SelectedItemIndex].Tag == "exit") Environment.Exit(0);
+                        if(menu.Items[menu.SelectedItemIndex].Tag == "path")
+                        {
+                            Program.ChangeTheSavePath();
+                            foreach(MenuItem item in menu.Items)
+                            {
+                                if(item.Tag == "path")
+                                {
+                                    item.Caption = $"Change save path (Current path: {Program.SavePath})";
+                                }
+                            }
+                            break;
+                        }
                         ConsoleHelper.ClearScreen();
                         Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
                         Program.RequestTheData(menu.Items[menu.SelectedItemIndex].Tag);
