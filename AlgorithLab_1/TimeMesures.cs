@@ -32,6 +32,20 @@ namespace AlgorithLab_1
                         return QuickSort.Timer(variablesCount);
                 case "bubble":
                         return BubbleSort.Timer(variablesCount);
+                case "obv":
+                        return Pow.ObviousPow(2, variablesCount);
+                case "rec":
+                        return Pow.RecPow(2, variablesCount);
+                case "qPow":
+                        return Pow.QuickPow(2, variablesCount);
+                case "clas":
+                        return Pow.ClassicQuickPow(2, variablesCount);
+                case "tim":
+                        return TSort.Timer(variablesCount);
+                case "multy":
+                        return MultiplyMatrix.Timer(variablesCount);
+                case "li":
+                        return Li.Timer(variablesCount);
                 default:
                     return 0;
             }
@@ -46,7 +60,7 @@ namespace AlgorithLab_1
             {
                 for (int j = 0; j < testsCount; j++)
                 {
-                    timeNotes[j] = StartAlgFromTag(variablesCount, tag);
+                    timeNotes[j] = StartAlgFromTag(i, tag);
                 }
                 long avarageTime = timeNotes.Sum() / testsCount;
                 times[i - 1] = avarageTime.ToString();

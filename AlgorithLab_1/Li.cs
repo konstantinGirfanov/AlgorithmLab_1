@@ -1,4 +1,7 @@
-﻿static class Li
+﻿using AlgorithLab_1;
+using System.Diagnostics;
+
+static class Li
 {
     public class Node
     {
@@ -37,6 +40,26 @@
             this.path = path;
             this.minDist = minDist;
         }
+    }
+
+    private static int[,] GenerateField(int n)
+    {
+        //Random randomNum = new();
+
+        var matrix = new int[n, n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // оказалось так лучше не делать, потому что чтобы заметить работу алгоритма
+                // надо чтобы звёзды на небе сошлись и существовал путь между случайными 2 точками
+                // в таком случайно сгенерированном поле
+                //matrix[i, j] = randomNum.Next(0, 1);
+                matrix[i, j] = 1;
+            }
+        }
+
+        return matrix;
     }
 
     // Ниже массивы детализируют все четыре возможных перемещения из ячейки
@@ -193,6 +216,23 @@
         }
     }
 
+    public static long Timer(int variableCount)
+    {
+        int[,] randomArray = GenerateField(variableCount);
+        Random num = new();
+        int startX = num.Next(0, randomArray.GetLength(1));
+        int startY = num.Next(0, randomArray.GetLength(0));
+        int finishX = num.Next(0, randomArray.GetLength(1));
+        int finishY = num.Next(0, randomArray.GetLength(0));
+
+        Stopwatch timer = new();
+
+        timer.Start();
+        FindShortestPath(randomArray, startX, startY, finishX, finishY);
+        timer.Stop();
+
+        return timer.ElapsedMilliseconds;
+    }
     /*public static void Main()
     {
         int[,] mat =
