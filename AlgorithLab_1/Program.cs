@@ -1,52 +1,96 @@
 ﻿using System.Diagnostics;
-using AlgorythmLab1;
+using System.IO;
 
 namespace AlgorithLab_1
 {
-    internal class Program
+    class Program
     {
+        public static string SavePath = "C:\\Users\\User\\Desktop";
         static void Main()
         {
-            List<Func<int[], int[]>> sorts = new List<Func<int[], int[]>>()
+            
+            Console.CursorVisible = false;
+            List<MenuItem> menuItems = new List<MenuItem>()
             {
-                QuickSort.Sort,
-                BubbleSort.Sort
+                new MenuItem("Constant algorithm", "const"),
+                new MenuItem("Sum algorithm", "sum"),
+                new MenuItem("Multiply algorithm", "mult"),
+                new MenuItem("Naive Polynomial algorithm", "sum"),
+                new MenuItem("Gorner's Method", "gorner"),
+                new MenuItem("ExchangeSort algorithm", "exchange"),
+                new MenuItem("QuickSort algorithm", "quick"),
+                new MenuItem("BubbleSort algorithm", "bubble"),
+                new MenuItem($"Change save path (Current path: {SavePath})", "path"),
+                new MenuItem("Exit", "exit")
             };
+            Menu menu = new Menu(menuItems);
 
-            foreach (var sort in sorts)
-            {
-                MeasureTheTime(2000, sort);
-            }
+            MenuActions.MoveThrough(menu);
         }
-        static void MeasureTheTime (int variablesCount, Func<int[], int[]> sort)
+
+        public static void RequestTheData(string tag)
         {
-            const int testCount = 5;
-
-            long[] timeNotes = new long[testCount];
-            Random randomNum = new();
-            string[] times = new string[variablesCount];
-            Stopwatch timer = new();
-            string path = string.Format("C:\\Users\\User\\Desktop\\measures.txt");
-            for (int i = 1; i <= variablesCount; i++)
+            string[] input = Console.ReadLine().Split(" ");
+            if (IsInputCorrect(input) == false) 
             {
-                int[] randomVariables = new int[i];
-                for (int n=0; n<i;n++)
-                    randomVariables[n] = randomNum.Next();
-                
-                for (int j = 0; j < testCount; j++)
-                {
-                    timer.Start();
-                    sort(randomVariables);
-                    timer.Stop();
-                    timeNotes[j] = timer.ElapsedMilliseconds;
-                }
-                long avarageTime = timeNotes.Sum() / testCount;
-                times[i-1] = avarageTime.ToString();
+                Console.WriteLine("Некоректный ввод, попробуйте снова");
+                RequestTheData(tag);
+                return;
             }
-            File.WriteAllLines(path, times);
-
-           
+            int variablesCount = Int32.Parse(input[0]);
+            int steps = Int32.Parse(input[1]);
+            int testsCount = Int32.Parse(input[2]);
+            TimeMesures.MeasureTheTime(tag, variablesCount, testsCount, steps, SavePath);
         }
+
+
+        private static bool IsInputCorrect(string[] input)
+        {
+
+            if (input.Count() != 3)
+            {
+                return false;
+            }
+            foreach (string s in input)
+            {
+                if (Int32.TryParse(s, out int _) == false)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static void ChangeTheSavePath()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите новый путь для сохранения данных:");
+
+            string newPath = Console.ReadLine();
+            while(!IsCorrectPath(newPath))
+            {
+                Console.Clear();
+                Console.WriteLine("Введённый путь не существует, введите заново:");
+                newPath = Console.ReadLine();
+            }
+
+            SavePath = newPath;
+        }
+
+        private static bool IsCorrectPath(string input)
+        {
+            return Directory.Exists(input);
+
+        }
+        public static int[] RandomArray(int length)
+        {
+            Random randomNum = new();
+            int[] randomVariables = new int[length];
+            for (int n = 0; n < length; n++)
+                randomVariables[n] = randomNum.Next();
+            return randomVariables;
+        }
+
     }
 }
 

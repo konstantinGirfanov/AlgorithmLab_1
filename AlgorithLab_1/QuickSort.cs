@@ -1,13 +1,16 @@
+using AlgorithLab_1;
+using System.Diagnostics;
+
 namespace AlgorythmLab1;
 
 public class QuickSort : Sorter
 {
-    public static int[] Sort(int[] arr)
+    public static void Sort(int[] arr)
     {
-        return SortArray(arr, 0, arr.Length-1);
+        int[] answ = SortArray(arr, 0, arr.Length-1);
     }
     
-    public static int[] SortArray(int[] array, int leftIndex, int rightIndex)
+    private static int[] SortArray(int[] array, int leftIndex, int rightIndex)
     {
         var i = leftIndex;
         var j = rightIndex;
@@ -38,5 +41,16 @@ public class QuickSort : Sorter
         if (i < rightIndex)
             SortArray(array, i, rightIndex);
         return array;
+    }
+    public static long Timer(int variableCount)
+    {
+        int[] randomArray = Program.RandomArray(variableCount);
+        Stopwatch timer = new();
+
+        timer.Start();
+        Sort(randomArray);
+        timer.Stop();
+
+        return timer.ElapsedMilliseconds;
     }
 }
