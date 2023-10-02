@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace AlgorythmLab1;
 
-public class QuickSort : ISortable
+public class QuickSort : Sorter
 {
     public static void Sort(int[] arr)
     {

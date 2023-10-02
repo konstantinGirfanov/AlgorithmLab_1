@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace AlgorithLab_1
 {
-    public class ExchangeSort : ISortable
+    public class ExchangeSort : Sorter
     {
-        public static void DoExchangeSort(int[] inputArray) 
+        public static int[] Sort(int[] inputArray) 
         {
             for (int i = 0; i < inputArray.Length; i++)
             {
@@ -24,6 +24,8 @@ namespace AlgorithLab_1
                     }
                 }
             }
+
+            return inputArray;
         }
         public static long Timer(int variableCount) 
         {
@@ -31,7 +33,7 @@ namespace AlgorithLab_1
             Stopwatch timer = new();
 
             timer.Start();
-            DoExchangeSort(randomArray);
+            Sort(randomArray);
             timer.Stop();
 
             return timer.ElapsedMilliseconds;
