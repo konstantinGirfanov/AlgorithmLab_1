@@ -5,7 +5,7 @@ namespace AlgorithLab_1
 {
     class Program
     {
-        public static string SavePath = "C:\\Users\\User\\Desktop";
+        public static string SavePath = "C:\\test";
         static void Main()
         {
             
@@ -20,6 +20,13 @@ namespace AlgorithLab_1
                 new MenuItem("ExchangeSort algorithm", "exchange"),
                 new MenuItem("QuickSort algorithm", "quick"),
                 new MenuItem("BubbleSort algorithm", "bubble"),
+                new MenuItem("TimSort algorithm", "tim"),
+                new MenuItem("ObviousPow algorithm", "obv"),
+                new MenuItem("RecPow algorithm", "rec"),
+                new MenuItem("QuickPow algorithm", "qPow"),
+                new MenuItem("ClassicQuickPow algorithm", "clas"),
+                new MenuItem("MatrixMultiply algorithm", "multy"),
+                new MenuItem("Li algorithm", "li"),
                 new MenuItem($"Change save path (Current path: {SavePath})", "path"),
                 new MenuItem("Exit", "exit")
             };

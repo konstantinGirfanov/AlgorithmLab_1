@@ -1,6 +1,7 @@
 ﻿namespace AlgorithLab_1
 {
     using System;
+    using System.Diagnostics;
 
     class TSort
     {
@@ -119,12 +120,24 @@
             }
         }
 
-        // Utility function to print the Array
+       /*/ Utility function to print the Array
         public static void PrintArray(int[] arr, int n)
         {
             for (int i = 0; i < n; i++)
                 Console.Write(arr[i] + " ");
             Console.Write("\n");
+        }*/
+
+        public static long Timer(int variableCount)
+        {
+            int[] randomArray = Program.RandomArray(variableCount);
+            Stopwatch timer = new();
+
+            timer.Start();
+            TimSort(randomArray, variableCount);
+            timer.Stop();
+
+            return timer.ElapsedMilliseconds;
         }
 
         /*public static void Main()
