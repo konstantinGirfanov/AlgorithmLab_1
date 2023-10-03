@@ -1,8 +1,10 @@
 ﻿using AlgorythmLab1;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,62 +12,53 @@ namespace AlgorithLab_1
 {
     public class TimeMesures
     {
-
-
-        public static long StartAlgFromTag(int variablesCount, string tag)
+        private Dictionary<string, string> methodSelector = new Dictionary<string, string>()
         {
-            switch (tag)
-            {
-                case "const":
-                        return SimpleAlgorithms.ConstTimer(variablesCount);
-                case "sum":
-                        return SimpleAlgorithms.SumTimer(variablesCount);
-                case "mult":
-                        return SimpleAlgorithms.MultTimer(variablesCount);
-                case "naivePol":
-                        return SimpleAlgorithms.NaivePolynomialTimer(variablesCount);
-                case "gorner":
-                        return SimpleAlgorithms.GornersTimer(variablesCount);
-                case "exchange":
-                        return ExchangeSort.Timer(variablesCount);
-                case "quick":
-                        return QuickSort.Timer(variablesCount);
-                case "bubble":
-                        return BubbleSort.Timer(variablesCount);
-                case "obv":
-                        return Pow.ObviousPow(2, variablesCount);
-                case "rec":
-                        return Pow.RecPow(2, variablesCount);
-                case "qPow":
-                        return Pow.QuickPow(2, variablesCount);
-                case "clas":
-                        return Pow.ClassicQuickPow(2, variablesCount);
-                case "tim":
-                        return TSort.Timer(variablesCount);
-                case "multy":
-                        return MultiplyMatrix.Timer(variablesCount);
-                case "li":
-                        return Li.Timer(variablesCount);
-                default:
-                    return 0;
-            }
+             {"const", "SimpleAlgorithms.ConstTimer" },
+             {"sum", "SimpleAlgorithms.SumTimer" },
+             {"mult", "SimpleAlgorithms.MultTimer" },
+             {"naivePol", "SimpleAlgorithms.NaivePolynomialTimer" },
+             {"gorner", "SimpleAlgorithms.GornersTimer" },
+             {"exchange", "ExchangeSort.Timer" },
+             {"quick", "QuickSort.Timer" },
+             {"bubble", "BubbleSort.Timer" },
+             {"obv", "Pow.ObviousPow" },
+             {"rec", "Pow.RecPow" },
+             {"qPow", "Pow.QuickPow" },
+             {"clas", "ClassicQuickPow" },
+             {"tim", "TSort.Timer" },
+             {"multy", "MultiplyMatrix.Timer" },
+             {"li", "Li.Timer" },
+        };
+        public long ReflexChooseAlg(string tag, int variablesCount)
+        {
+            string[] classAndMethodNames = methodSelector[tag].Split('.');
+            string className = $"AlgorithLab_1.{classAndMethodNames[0]}";
+            string methodName = classAndMethodNames[1];
+            Type classType = Type.GetType(className);
+            object classInstance = Activator.CreateInstance(classType);
+            object[] methodParams = new object[] { variablesCount };
+            MethodInfo methodInfo = classType.GetMethod(methodName);
+            return (long)methodInfo.Invoke(classInstance, methodParams);
+
         }
-        public static void  MeasureTheTime(string tag, int variablesCount, int testsCount, int steps, string savePath)
+        public void MeasureTheTime(string tag, int variablesCount, int testsCount, int steps, string savePath)
         {
             long[] timeNotes = new long[testsCount];
             string[] times = new string[variablesCount];
             
 
-            for (int i = steps; i <= variablesCount; i+=steps)
+            for (int i = steps; i <= variablesCount; i += steps)
             {
                 for (int j = 0; j < testsCount; j++)
                 {
-                    timeNotes[j] = StartAlgFromTag(i, tag);
+                    timeNotes[j] = ReflexChooseAlg(tag, i);
                 }
                 long avarageTime = timeNotes.Sum() / testsCount;
-                times[i - 1] = avarageTime.ToString();
+                times[i/steps - 1] = $"{i} {avarageTime}";
             }
-            File.WriteAllLines(savePath + "\\" + tag + "measures.txt", times);
+            string path = $"{savePath}\\{tag}measures.txt";
+            File.WriteAllLines(path, times);
         }
     }
 }

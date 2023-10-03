@@ -5,7 +5,7 @@ namespace AlgorithLab_1
 {
     class Program
     {
-        public static string SavePath = "C:\\test";
+        public static string SavePath = "C:\\Users\\User\\Desktop";
         static void Main()
         {
             
@@ -47,7 +47,8 @@ namespace AlgorithLab_1
             int variablesCount = Int32.Parse(input[0]);
             int steps = Int32.Parse(input[1]);
             int testsCount = Int32.Parse(input[2]);
-            TimeMesures.MeasureTheTime(tag, variablesCount, testsCount, steps, SavePath);
+            TimeMesures timeMesures = new TimeMesures();
+            timeMesures.MeasureTheTime(tag, variablesCount, testsCount, steps, SavePath);
         }
 
 
