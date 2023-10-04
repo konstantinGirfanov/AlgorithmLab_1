@@ -1,6 +1,7 @@
 ﻿using AlgorithLab_1;
 using System.Diagnostics;
 
+namespace AlgorithLab_1;
 class MultiplyMatrix : IExecutable
 {
 

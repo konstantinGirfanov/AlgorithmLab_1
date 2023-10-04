@@ -27,13 +27,13 @@ namespace AlgorithLab_1
                             menu.SelectedItemIndex--;
                         break;
                     case ConsoleKey.Enter:
-                        if (menu.Items[menu.SelectedItemIndex].Tag == "exit") Environment.Exit(0);
-                        if(menu.Items[menu.SelectedItemIndex].Tag == "path")
+                        if (menu.Items[menu.SelectedItemIndex].ClassFullName == "exit") Environment.Exit(0);
+                        if(menu.Items[menu.SelectedItemIndex].ClassFullName == "path")
                         {
                             Program.ChangeTheSavePath();
                             foreach(MenuItem item in menu.Items)
                             {
-                                if(item.Tag == "path")
+                                if(item.ClassFullName == "path")
                                 {
                                     item.Caption = $"Change save path (Current path: {Program.SavePath})";
                                 }
@@ -42,7 +42,7 @@ namespace AlgorithLab_1
                         }
                         ConsoleHelper.ClearScreen();
                         Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
-                        Program.RequestTheData(menu.Items[menu.SelectedItemIndex].Tag);
+                        Program.RequestTheData(menu.Items[menu.SelectedItemIndex].ClassFullName);
                         Console.ReadKey();
                         break;
                 }

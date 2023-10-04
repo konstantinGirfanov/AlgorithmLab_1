@@ -1,4 +1,4 @@
-﻿using AlgorythmLab1;
+﻿using AlgorithLab_1;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

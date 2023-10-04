@@ -1,4 +1,4 @@
-﻿using AlgorythmLab1;
+﻿using AlgorithLab_1;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -12,52 +12,45 @@ namespace AlgorithLab_1
 {
     public class TimeMesures
     {
-        private Dictionary<string, string> methodSelector = new Dictionary<string, string>()
+        public long ReflexChooseAlg(string name, int variablesCount)
         {
-             {"const", "SimpleAlgorithms.ConstTimer" },
-             {"sum", "SimpleAlgorithms.SumTimer" },
-             {"mult", "SimpleAlgorithms.MultTimer" },
-             {"naivePol", "SimpleAlgorithms.NaivePolynomialTimer" },
-             {"gorner", "SimpleAlgorithms.GornersTimer" },
-             {"exchange", "ExchangeSort.Timer" },
-             {"quick", "QuickSort.Timer" },
-             {"bubble", "BubbleSort.Timer" },
-             {"obv", "Pow.ObviousPow" },
-             {"rec", "Pow.RecPow" },
-             {"qPow", "Pow.QuickPow" },
-             {"clas", "ClassicQuickPow" },
-             {"tim", "TSort.Timer" },
-             {"multy", "MultiplyMatrix.Timer" },
-             {"li", "Li.Timer" },
-        };
-        public long ReflexChooseAlg(string tag, int variablesCount)
-        {
-            string[] classAndMethodNames = methodSelector[tag].Split('.');
+            string[] classAndMethodNames = name.Split('.');
             string className = $"AlgorithLab_1.{classAndMethodNames[0]}";
             string methodName = classAndMethodNames[1];
-            Type classType = Type.GetType(className);
-            object classInstance = Activator.CreateInstance(classType);
-            object[] methodParams = new object[] { variablesCount };
-            MethodInfo methodInfo = classType.GetMethod(methodName);
-            return (long)methodInfo.Invoke(classInstance, methodParams);
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            Type type = assembly.GetType(className);
+            MethodInfo methodInfo = type.GetMethod(methodName, new Type[] { typeof(int) });
+            object instance = Activator.CreateInstance(type);
+            return (long)methodInfo.Invoke(instance, new object[] { variablesCount });
+        }
+        public Type ReflexGetAlgType(string name)
+        {
+            string[] classAndMethodNames = name.Split('.');
+            string className = $"AlgorithLab_1.{classAndMethodNames[0]}";
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            return assembly.GetType(className);
+
 
         }
-        public void MeasureTheTime(string tag, int variablesCount, int testsCount, int steps, string savePath)
+        public void MeasureTheTime(string name, int variablesCount, int testsCount, int steps, string savePath)
         {
             long[] timeNotes = new long[testsCount];
+            List<double> doubleTimeNotes = new List<double>();
             string[] times = new string[variablesCount];
-            
-
+            List<double> stepList = new List<double>();
             for (int i = steps; i <= variablesCount; i += steps)
             {
                 for (int j = 0; j < testsCount; j++)
                 {
-                    timeNotes[j] = ReflexChooseAlg(tag, i);
+                    timeNotes[j] = ReflexChooseAlg(name, i);
+                    doubleTimeNotes.Add((double) timeNotes[j]);
                 }
+                stepList.Add(i);
                 long avarageTime = timeNotes.Sum() / testsCount;
                 times[i/steps - 1] = $"{i} {avarageTime}";
             }
-            string path = $"{savePath}\\{tag}measures.txt";
+            string path = $"{savePath}\\{name}measures.txt";
+            Drawer.Draw(stepList, doubleTimeNotes, name, path, ReflexGetAlgType(name));
             File.WriteAllLines(path, times);
         }
         public static long Timer(int variableCount, IExecutable executable)

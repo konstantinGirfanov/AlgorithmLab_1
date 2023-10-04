@@ -1,7 +1,7 @@
 using AlgorithLab_1;
 using System.Diagnostics;
 
-namespace AlgorythmLab1;
+namespace AlgorithLab_1;
 
 public class QuickSort : IExecutable
 {

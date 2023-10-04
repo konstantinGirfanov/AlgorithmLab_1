@@ -1,39 +1,40 @@
 using AlgorithLab_1;
 using System.Diagnostics;
 
-namespace AlgorythmLab1;
-
-public class BubbleSort : IExecutable
+namespace AlgorithLab_1
 {
-    public void Execute(int n)
+    public class BubbleSort : IExecutable
     {
-        int[] randomArray = Program.RandomArray(n);
-        Sort(randomArray);
-    }
-
-    public Func<double, double> GetComplexityFunction() => num => num * num;
-    
-    public static int[] Sort(int[] arr)
-    {
-        var n = arr.Length;
-        for (int i = 0; i < n - 1; i++)
+        public void Execute(int n)
         {
-            for (int j = 0; j < n - i - 1; j++)
-            {
-                if (arr[j] > arr[j + 1])
-                {
-                    var tempVar = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tempVar;
-                }
-            }
+            int[] randomArray = Program.RandomArray(n);
+            Sort(randomArray);
         }
 
-        return arr;
-    }
-    public static long Timer(int variableCount)
-    {
-        return TimeMesures.Timer(variableCount, new BubbleSort());
+        public Func<double, double> GetComplexityFunction() => num => num * num;
+    
+        public static int[] Sort(int[] arr)
+        {
+            var n = arr.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        var tempVar = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tempVar;
+                    }
+                }
+            }
+
+            return arr;
+        }
+        public static long Timer(int variableCount)
+        {
+            return TimeMesures.Timer(variableCount, new BubbleSort());
+        }
     }
 }
    

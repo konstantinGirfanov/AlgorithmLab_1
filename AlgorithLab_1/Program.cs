@@ -13,43 +13,42 @@ namespace AlgorithLab_1
             Console.CursorVisible = false;
             List<MenuItem> menuItems = new List<MenuItem>()
             {
-                new MenuItem("Constant algorithm", "const"),
-                new MenuItem("Sum algorithm", "sum"),
-                new MenuItem("Multiply algorithm", "mult"),
-                new MenuItem("Naive Polynomial algorithm", "sum"),
-                new MenuItem("Gorner's Method", "gorner"),
-                new MenuItem("ExchangeSort algorithm", "exchange"),
-                new MenuItem("QuickSort algorithm", "quick"),
-                new MenuItem("BubbleSort algorithm", "bubble"),
-                new MenuItem("TimSort algorithm", "tim"),
-                new MenuItem("ObviousPow algorithm", "obv"),
-                new MenuItem("RecPow algorithm", "rec"),
-                new MenuItem("QuickPow algorithm", "qPow"),
-                new MenuItem("ClassicQuickPow algorithm", "clas"),
-                new MenuItem("MatrixMultiply algorithm", "multy"),
-                new MenuItem("Li algorithm", "li"),
+                new MenuItem("Constant algorithm", "ConstAlgorythm.Timer"),
+                new MenuItem("Sum algorithm", "SumAlgorythm.Timer"),
+                new MenuItem("Multiply algorithm", "MultiplyAlgorythm.Timer"),
+                new MenuItem("Naive Polynomial algorithm", "NaivePolynomial.Timer"),
+                new MenuItem("Gorner's Method", "GornersMethod.Timer"),
+                new MenuItem("ExchangeSort algorithm", "ExchangeSort.Timer"),
+                new MenuItem("QuickSort algorithm", "QuickSort.Timer"),
+                new MenuItem("BubbleSort algorithm", "BubbleSort.Timer"),
+                new MenuItem("TimSort algorithm", "TSort.Timer"),
+                new MenuItem("ObviousPow algorithm", "ObviousPow.Timer"),
+                new MenuItem("RecPow algorithm", "RecPow.Timer"),
+                new MenuItem("QuickPow algorithm", "QuickPow.Timer"),
+                new MenuItem("ClassicQuickPow algorithm", "ClassicQuickPow.Timer"),
+                new MenuItem("MatrixMultiply algorithm", "MultiplyMatrix.Timer"),
+                new MenuItem("Li algorithm", "Li.Timer"),
                 new MenuItem($"Change save path (Current path: {SavePath})", "path"),
                 new MenuItem("Exit", "exit")
             };
             Menu menu = new Menu(menuItems);
-
             MenuActions.MoveThrough(menu);
         }
 
-        public static void RequestTheData(string tag)
+        public static void RequestTheData(string name)
         {
             string[] input = Console.ReadLine().Split(" ");
             if (IsInputCorrect(input) == false) 
             {
                 Console.WriteLine("Некоректный ввод, попробуйте снова");
-                RequestTheData(tag);
+                RequestTheData(name);
                 return;
             }
             int variablesCount = Int32.Parse(input[0]);
             int steps = Int32.Parse(input[1]);
             int testsCount = Int32.Parse(input[2]);
             TimeMesures timeMesures = new TimeMesures();
-            timeMesures.MeasureTheTime(tag, variablesCount, testsCount, steps, SavePath);
+            timeMesures.MeasureTheTime(name, variablesCount, testsCount, steps, SavePath);
         }
 
 

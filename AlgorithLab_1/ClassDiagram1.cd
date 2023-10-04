@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AlgorythmLab1.BubbleSort" Collapsed="true">
+  <Class Name="AlgorithLab_1.BubbleSort" Collapsed="true">
     <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
@@ -15,7 +15,7 @@
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AlgorythmLab1.QuickSort" Collapsed="true">
+  <Class Name="AlgorithLab_1.QuickSort" Collapsed="true">
     <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAQAAEgAA=</HashCode>
@@ -26,7 +26,7 @@
   <Class Name="AlgorithLab_1.TimeMesures" Collapsed="true">
     <Position X="8.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>TimeMesures.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,7 +47,7 @@
   <Class Name="AlgorithLab_1.MenuItem" Collapsed="true">
     <Position X="5.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>MenuItem.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -71,22 +71,6 @@
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
       <FileName>SieveEratosphenes.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="MultiplyMatrix" Collapsed="true">
-    <Position X="7" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
-      <FileName>MatrixMulty.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="Li" Collapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAkAEAAAAAEAAgAAAAAAAAQEgQA=</HashCode>
-      <FileName>Li.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
