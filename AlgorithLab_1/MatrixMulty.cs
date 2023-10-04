@@ -1,8 +1,16 @@
 ﻿using AlgorithLab_1;
 using System.Diagnostics;
 
-class MultiplyMatrix
+class MultiplyMatrix : IExecutable
 {
+    
+    public void Execute(int n)
+    {
+        int[,] firstMat = GenerateMatrix(n);
+        int[,] secondMat = GenerateMatrix(n);
+        Multiply(firstMat, secondMat, n);
+    }
+    
     private static int[,] GenerateMatrix(int n)
     {
         Random randomNum = new();
@@ -36,14 +44,7 @@ class MultiplyMatrix
 
     public static long Timer(int variableCount)
     {
-        int[,] firstMat = GenerateMatrix(variableCount);
-        int[,] secondMat = GenerateMatrix(variableCount);
-        Stopwatch timer = new();
-
-        timer.Start();
-        Multiply(firstMat, secondMat, variableCount);
-        timer.Stop();
-
-        return timer.ElapsedMilliseconds;
+        return TimeMesures.Timer(variableCount, new MultiplyMatrix());
     }
+
 }

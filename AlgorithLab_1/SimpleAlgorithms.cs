@@ -2,27 +2,30 @@
 
 namespace AlgorithLab_1
 {
-    public class SimpleAlgorithms
+    public class ConstAlgorythm : IExecutable
     {
-        public static int DoTheConstAlgorithm(int[] inputArray)
+        public void Execute(int n)
+        {
+            DoTheConstAlgorithm(n);
+        }
+        
+        public static int DoTheConstAlgorithm(int ny)
         {
             return 1;
         }
-
-        public static int DoTheSumAlgorithm(int[] inputArray) 
-        { 
-            int sum = 0;
-            foreach (int i in inputArray)
-                sum += i;
-            return sum;
-        }
-
-        public static int DoTheMultiplyAlgorithm(int[] inputArray)
+        
+        public static long Timer(int variableCount)
         {
-            int mult = 1;
-            foreach (int i in inputArray)
-                mult *= i;
-            return mult;
+            return TimeMesures.Timer(variableCount, new ConstAlgorythm());
+        }
+    }
+    
+    public class NaivePolynomial : IExecutable
+    {
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            NaiveCountPolynomial(randomArray);
         }
 
         public static double NaiveCountPolynomial(int[] inputArray)
@@ -35,71 +38,79 @@ namespace AlgorithLab_1
             return polynomialCount;
         }
 
-        public static double DoTheGarnersMethod(int[] inputArray)
+        public static long Timer(int variableCount)
+        {
+            return TimeMesures.Timer(variableCount, new NaivePolynomial());
+        }
+    }
+    
+    public class MultiplyAlgorythm : IExecutable
+    {
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            DoTheMultiplyAlgorithm(randomArray);
+        }
+        
+        public static int DoTheMultiplyAlgorithm(int[] inputArray)
+        {
+            int mult = 1;
+            foreach (int i in inputArray)
+                mult *= i;
+            return mult;
+        }
+        
+        public static long Timer(int variableCount)
+        {
+            return TimeMesures.Timer(variableCount, new MultiplyAlgorythm());
+        }
+    }
+    
+    public class SumAlgorythm : IExecutable
+    {
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            DoTheSumAlgorithm(randomArray);
+        }
+
+        public static int DoTheSumAlgorithm(int[] inputArray) 
+        { 
+            int sum = 0;
+            foreach (int i in inputArray)
+                sum += i;
+            return sum;
+        }
+
+        public static long Timer(int variableCount)
+        {
+            return TimeMesures.Timer(variableCount, new SumAlgorythm());
+        }
+    }
+    
+    public class GornersMethod : IExecutable
+    {
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            DoTheGornersMethod(randomArray);
+        }
+        
+        public static double DoTheGornersMethod(int[] inputArray)
         {
             return GornersStepInto(inputArray, 0);
         }
-
+        
         private static double GornersStepInto(int[] inputArray, int stepNumber)
         {
             if (stepNumber < inputArray.Length)
                 return inputArray[stepNumber] + 1.5 * GornersStepInto(inputArray, stepNumber + 1);
-            else return 0;
+            return 0;
         }
-        public static long ConstTimer(int variableCount)
+        
+        public static long Timer(int variableCount)
         {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            DoTheConstAlgorithm(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
-        }
-        public static long SumTimer(int variableCount)
-        {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            DoTheSumAlgorithm(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
-        }
-        public static long MultTimer(int variableCount)
-        {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            DoTheMultiplyAlgorithm(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
-        }
-        public static long NaivePolynomialTimer(int variableCount)
-        {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            NaiveCountPolynomial(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
-        }
-        public static long GornersTimer(int variableCount)
-        {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            DoTheMultiplyAlgorithm(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
+            return TimeMesures.Timer(variableCount, new GornersMethod());
         }
     }
 }

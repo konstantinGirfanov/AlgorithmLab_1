@@ -1,7 +1,7 @@
 ﻿using AlgorithLab_1;
 using System.Diagnostics;
 
-static class Li
+class Li : IExecutable
 {
     public class Node
     {
@@ -215,23 +215,21 @@ static class Li
             Console.WriteLine();
         }
     }
-
-    public static long Timer(int variableCount)
+    
+    public void Execute(int n)
     {
-        int[,] randomArray = GenerateField(variableCount);
+        int[,] randomArray = GenerateField(n);
         Random num = new();
         int startX = num.Next(0, randomArray.GetLength(1));
         int startY = num.Next(0, randomArray.GetLength(0));
         int finishX = num.Next(0, randomArray.GetLength(1));
         int finishY = num.Next(0, randomArray.GetLength(0));
-
-        Stopwatch timer = new();
-
-        timer.Start();
         FindShortestPath(randomArray, startX, startY, finishX, finishY);
-        timer.Stop();
-
-        return timer.ElapsedMilliseconds;
+    }
+    
+    public static long Timer(int variableCount)
+    {
+        return TimeMesures.Timer(variableCount, new Li());
     }
     /*public static void Main()
     {
