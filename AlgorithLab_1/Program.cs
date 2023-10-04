@@ -6,6 +6,7 @@ namespace AlgorithLab_1
     class Program
     {
         public static string SavePath = "C:\\Users\\User\\Desktop";
+
         static void Main()
         {
             

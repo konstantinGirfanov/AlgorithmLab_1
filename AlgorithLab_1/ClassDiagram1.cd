@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AlgorythmLab1.BubbleSort" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Bubble sort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.Program" Collapsed="true">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAgAAAAAAAAAAAAAAAAAAAACEgAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorythmLab1.QuickSort" Collapsed="true">
+    <Position X="2.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAQAAEAAA=</HashCode>
+      <FileName>QuickSort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.TimeMesures" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TimeMesures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.Menu" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.MenuActions" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>MenuActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.MenuItem" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorythmLab1.Sorter">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sorter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.TSort" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAgAAAAAAAAAAAAAAACAAQAAAAAAAAAEAAA=</HashCode>
+      <FileName>TSort.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.SieveEratosphenes" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SieveEratosphenes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.SimpleAlgorithms" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAAABAgEEAAAAEAAAAAAAAAAAIECAABAAAAAAAAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MultiplyMatrix" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>MatrixMulty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Li" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAkAEAAAAAEAAgAAAAAAAAQEAQA=</HashCode>
+      <FileName>Li.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pow" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABEAAAAAAAIAAAAAAABAAAAAABAA=</HashCode>
+      <FileName>Pow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.ConsoleHelper" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

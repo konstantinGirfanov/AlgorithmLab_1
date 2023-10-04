@@ -2,6 +2,7 @@
 {
     public static class ConsoleHelper
     {
+
         public static void ClearScreen()
         {
             for (int i = 0; i < Console.WindowHeight; i++)
