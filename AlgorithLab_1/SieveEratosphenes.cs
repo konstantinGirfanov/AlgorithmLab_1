@@ -1,8 +1,8 @@
 namespace AlgorithLab_1;
 
-public class SieveEratosphenes
+public class SieveEratosphenes : IExecutable
 {
-    static List<int> SieveEratosthenes(int n)
+    static void SieveEratosthenes(int n)
     {
         // Создание я думаю влияет на время работы, поэтому надо вынести из метода
         var numbers = Enumerable.Range(1, n - 1).ToList();
@@ -14,7 +14,15 @@ public class SieveEratosphenes
                 numbers.Remove(numbers[i] * j);
             }
         }
+    }
 
-        return numbers;
+    public void Execute(int n)
+    {
+        SieveEratosthenes(n);
+    }
+    
+    public static long Timer(int variableCount)
+    {
+        return TimeMesures.Timer(variableCount, new SieveEratosphenes());
     }
 }
