@@ -8,6 +8,8 @@ public class ObviousPow : IExecutable
         int num = new Random().Next();
         Pow(num, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num;
     
     public static int Pow(int num, int degree)
     {
@@ -38,6 +40,8 @@ public class RecPow : IExecutable
         int num = new Random().Next();
         Pow(num, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num;
     
     public static int Pow(int num, int degree)
     {
@@ -79,6 +83,8 @@ public class QuickPow : IExecutable
         int num = new Random().Next();
         Pow(num, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num;
     
     public static int Pow(int num, int degree)
     {
@@ -127,6 +133,8 @@ public class ClassicQuickPow : IExecutable
         int num = new Random().Next();
         Pow(num, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num;
     
     public static int Pow(int num, int degree)
     {

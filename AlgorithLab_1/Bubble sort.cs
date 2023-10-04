@@ -10,6 +10,8 @@ public class BubbleSort : IExecutable
         int[] randomArray = Program.RandomArray(n);
         Sort(randomArray);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * num;
     
     public static int[] Sort(int[] arr)
     {

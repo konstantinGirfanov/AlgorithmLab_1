@@ -15,6 +15,8 @@ namespace AlgorithLab_1
             int[] randomArray = Program.RandomArray(n);
             Sort(randomArray);
         }
+
+        public Func<double, double> GetComplexityFunction() => num => num * num;
         
         public static void Sort(int[] inputArray) 
         {

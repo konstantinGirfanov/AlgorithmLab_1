@@ -12,6 +12,8 @@
             int[] randomArray = Program.RandomArray(n);
             TimSort(randomArray, n);
         }
+
+        public Func<double, double> GetComplexityFunction() => num => num * Math.Log2(num);
         // This function sorts array from left index to
         // to right index which is of size atmost RUN
         public static void InsertionSort(int[] arr, int left,
