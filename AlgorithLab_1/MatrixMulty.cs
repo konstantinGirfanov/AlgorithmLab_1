@@ -10,6 +10,8 @@ class MultiplyMatrix : IExecutable
         int[,] secondMat = GenerateMatrix(n);
         Multiply(firstMat, secondMat, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * num;
     
     private static int[,] GenerateMatrix(int n)
     {

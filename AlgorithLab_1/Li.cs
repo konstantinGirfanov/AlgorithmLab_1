@@ -226,6 +226,8 @@ class Li : IExecutable
         int finishY = num.Next(0, randomArray.GetLength(0));
         FindShortestPath(randomArray, startX, startY, finishX, finishY);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * num;
     
     public static long Timer(int variableCount)
     {

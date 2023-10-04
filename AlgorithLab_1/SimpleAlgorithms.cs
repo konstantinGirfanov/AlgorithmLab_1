@@ -8,6 +8,8 @@ namespace AlgorithLab_1
         {
             DoTheConstAlgorithm(n);
         }
+
+        public Func<double, double> GetComplexityFunction() => num => 0;
         
         public static int DoTheConstAlgorithm(int ny)
         {
@@ -28,6 +30,8 @@ namespace AlgorithLab_1
             NaiveCountPolynomial(randomArray);
         }
 
+        public Func<double, double> GetComplexityFunction() => num => num;
+        
         public static double NaiveCountPolynomial(int[] inputArray)
         {
             double polynomialCount = 0;
@@ -51,6 +55,8 @@ namespace AlgorithLab_1
             int[] randomArray = Program.RandomArray(n);
             DoTheMultiplyAlgorithm(randomArray);
         }
+
+        public Func<double, double> GetComplexityFunction() => num => num;
         
         public static int DoTheMultiplyAlgorithm(int[] inputArray)
         {
@@ -74,6 +80,8 @@ namespace AlgorithLab_1
             DoTheSumAlgorithm(randomArray);
         }
 
+        public Func<double, double> GetComplexityFunction() => num => num;
+
         public static int DoTheSumAlgorithm(int[] inputArray) 
         { 
             int sum = 0;
@@ -95,6 +103,8 @@ namespace AlgorithLab_1
             int[] randomArray = Program.RandomArray(n);
             DoTheGornersMethod(randomArray);
         }
+
+        public Func<double, double> GetComplexityFunction() => num => num;
         
         public static double DoTheGornersMethod(int[] inputArray)
         {
