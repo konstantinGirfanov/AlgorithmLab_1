@@ -7,27 +7,29 @@ namespace AlgorithLab_1
     {
         public static string SavePath = "C:\\Users\\User\\Desktop";
 
+     
+
         static void Main()
         {
             
             Console.CursorVisible = false;
             List<MenuItem> menuItems = new List<MenuItem>()
             {
-                new MenuItem("Constant algorithm", "ConstAlgorythm.Timer"),
-                new MenuItem("Sum algorithm", "SumAlgorythm.Timer"),
-                new MenuItem("Multiply algorithm", "MultiplyAlgorythm.Timer"),
-                new MenuItem("Naive Polynomial algorithm", "NaivePolynomial.Timer"),
-                new MenuItem("Gorner's Method", "GornersMethod.Timer"),
-                new MenuItem("ExchangeSort algorithm", "ExchangeSort.Timer"),
-                new MenuItem("QuickSort algorithm", "QuickSort.Timer"),
-                new MenuItem("BubbleSort algorithm", "BubbleSort.Timer"),
-                new MenuItem("TimSort algorithm", "TSort.Timer"),
-                new MenuItem("ObviousPow algorithm", "ObviousPow.Timer"),
-                new MenuItem("RecPow algorithm", "RecPow.Timer"),
-                new MenuItem("QuickPow algorithm", "QuickPow.Timer"),
-                new MenuItem("ClassicQuickPow algorithm", "ClassicQuickPow.Timer"),
-                new MenuItem("MatrixMultiply algorithm", "MultiplyMatrix.Timer"),
-                new MenuItem("Li algorithm", "Li.Timer"),
+                new MenuItem("Constant algorithm", "ConstAlgorythm"),
+                new MenuItem("Sum algorithm", "SumAlgorythm"),
+                new MenuItem("Multiply algorithm", "MultiplyAlgorythm"),
+                new MenuItem("Naive Polynomial algorithm", "NaivePolynomial"),
+                new MenuItem("Gorner's Method", "GornersMethod"),
+                new MenuItem("ExchangeSort algorithm", "ExchangeSort"),
+                new MenuItem("QuickSort algorithm", "QuickSort"),
+                new MenuItem("BubbleSort algorithm", "BubbleSort"),
+                new MenuItem("TimSort algorithm", "TSort"),
+                new MenuItem("ObviousPow algorithm", "ObviousPow"),
+                new MenuItem("RecPow algorithm", "RecPow"),
+                new MenuItem("QuickPow algorithm", "QuickPow"),
+                new MenuItem("ClassicQuickPow algorithm", "ClassicQuickPow"),
+                new MenuItem("MatrixMultiply algorithm", "MultiplyMatrix"),
+                new MenuItem("Li algorithm", "Li"),
                 new MenuItem($"Change save path (Current path: {SavePath})", "path"),
                 new MenuItem("Exit", "exit")
             };

@@ -1,93 +1,193 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="AlgorithLab_1.BubbleSort" Collapsed="true">
-    <Position X="0.5" Y="2.25" Width="1.5" />
+  <Class Name="AlgorithLab_1.Program">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAgAAAAAAAAAAAAAAAAAAAACEgAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.Menu">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.MenuActions">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>MenuActions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.MenuItem">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>MenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.TimeMesures">
+    <Position X="5.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>TimeMesures.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.ConsoleHelper">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConsoleHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AlgorithLab_1.BubbleSort">
+    <Position X="9" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
       <FileName>Bubble sort.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AlgorithLab_1.Program" Collapsed="true">
-    <Position X="10.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAAAEAAgAAAAAAAAAAAAAAAAAAAACEgAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.QuickSort" Collapsed="true">
-    <Position X="2.75" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAQAAEgAA=</HashCode>
-      <FileName>QuickSort.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="AlgorithLab_1.TimeMesures" Collapsed="true">
-    <Position X="8.75" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>TimeMesures.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.Menu" Collapsed="true">
-    <Position X="8.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Menu.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.MenuActions" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
-      <FileName>MenuActions.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.MenuItem" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAA=</HashCode>
-      <FileName>MenuItem.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorythmLab1.Sorter">
-    <Position X="1.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sorter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.TSort" Collapsed="true">
-    <Position X="10.5" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAgAAAQAAAAAAAAAAACAAQAAAAAAAAAEgAA=</HashCode>
-      <FileName>TSort.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="AlgorithLab_1.SieveEratosphenes" Collapsed="true">
-    <Position X="5.25" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
-      <FileName>SieveEratosphenes.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
-  <Class Name="AlgorithLab_1.ConsoleHelper" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ConsoleHelper.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="AlgorithLab_1.ExchangeSort" Collapsed="true">
-    <Position X="7" Y="2.5" Width="1.5" />
+  <Class Name="AlgorithLab_1.ExchangeSort">
+    <Position X="13.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
       <FileName>ExchangeSort.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="AlgorithLab_1.Li">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="AlgorithLab_1.Li.Node" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Li.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="AlgorithLab_1.Li.Path" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Li.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAkAEAAAAAEAAgAAAAAAAAQEgQA=</HashCode>
+      <FileName>Li.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.ObviousPow" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>Pow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.RecPow" BaseTypeListCollapsed="true">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>Pow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.QuickPow" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>Pow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.ClassicQuickPow" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>Pow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.QuickSort">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAAAQAAEgAA=</HashCode>
+      <FileName>QuickSort.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.SieveEratosphenes">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>SieveEratosphenes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.ConstAlgorythm" BaseTypeListCollapsed="true">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.NaivePolynomial" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.MultiplyAlgorythm" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.SumAlgorythm" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.GornersMethod" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAIAAAAAAAAAABAAAAAEgAA=</HashCode>
+      <FileName>SimpleAlgorithms.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AlgorithLab_1.TSort">
+    <Position X="9" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAgAAAQAAAAAAAAAAACAAQAAAAAAAAAEgAA=</HashCode>
+      <FileName>TSort.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.MultiplyMatrix">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <FileName>MatrixMulty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="AlgorithLab_1.IExecutable">
+    <Position X="7" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>IExecutable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

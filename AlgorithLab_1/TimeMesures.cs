@@ -14,9 +14,8 @@ namespace AlgorithLab_1
     {
         public long ReflexChooseAlg(string name, int variablesCount)
         {
-            string[] classAndMethodNames = name.Split('.');
-            string className = $"AlgorithLab_1.{classAndMethodNames[0]}";
-            string methodName = classAndMethodNames[1];
+            string className = $"AlgorithLab_1.{name}";
+            string methodName = "Timer";
             Assembly assembly = Assembly.GetExecutingAssembly();
             Type type = assembly.GetType(className);
             MethodInfo methodInfo = type.GetMethod(methodName, new Type[] { typeof(int) });
@@ -50,7 +49,7 @@ namespace AlgorithLab_1
                 times[i/steps - 1] = $"{i} {avarageTime}";
             }
             string path = $"{savePath}\\{name}measures.txt";
-            Drawer.Draw(stepList, doubleTimeNotes, name, path, ReflexGetAlgType(name));
+            Drawer.Draw(stepList, doubleTimeNotes, name, $"{savePath}\\{name}measures.png", ReflexGetAlgType(name));
             File.WriteAllLines(path, times);
         }
         public static long Timer(int variableCount, IExecutable executable)

@@ -74,6 +74,7 @@ namespace AlgorithLab_1
     
     public class SumAlgorythm : IExecutable
     {
+
         public void Execute(int n)
         {
             int[] randomArray = Program.RandomArray(n);
