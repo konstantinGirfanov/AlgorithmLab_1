@@ -60,5 +60,16 @@ namespace AlgorithLab_1
             string path = $"{savePath}\\{tag}measures.txt";
             File.WriteAllLines(path, times);
         }
+        public static long Timer(int variableCount, IExecutable executable)
+        {
+            int[] randomArray = Program.RandomArray(variableCount);
+            Stopwatch timer = new();
+
+            timer.Start();
+            executable.Execute(variableCount);
+            timer.Stop();
+
+            return timer.ElapsedMilliseconds;
+        }
     }
 }
