@@ -48,7 +48,7 @@ public class QuickSort : IExecutable
         return array;
     }
     
-    public long Timer(int variableCount)
+    public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new QuickSort());
     }

@@ -1,13 +1,17 @@
 ﻿using AlgorithLab_1;
 using System.Diagnostics;
 
-class Pow
+public class ObviousPow : IExecutable
 {
-    private static int count = 0;
-
-    public static int ObviousPow(int num, int degree)
+    public void Execute(int n)
     {
-        count = 0;
+        int num = new Random().Next();
+        Pow(num, n);
+    }
+    
+    public static int Pow(int num, int degree)
+    {
+        int count = 0;
         int result = 1;
         int k = 0;
 
@@ -20,10 +24,24 @@ class Pow
 
         return count;
     }
-
-    public static int RecPow(int num, int degree)
+    
+    public static long Timer(int variableCount)
     {
-        count = 0;
+        return TimeMesures.Timer(variableCount, new ObviousPow());
+    }
+}
+
+public class RecPow : IExecutable
+{
+    public void Execute(int n)
+    {
+        int num = new Random().Next();
+        Pow(num, n);
+    }
+    
+    public static int Pow(int num, int degree)
+    {
+        int count = 0;
         if (degree == 0)
         {
             count++;
@@ -31,7 +49,7 @@ class Pow
         }
         else
         {
-            int result = RecPow(num, degree / 2);
+            int result = Pow(num, degree / 2);
 
             if (degree % 2 == 1)
             {
@@ -47,10 +65,24 @@ class Pow
             return count;
         }
     }
-
-    public static int QuickPow(int num, int degree)
+    
+    public static long Timer(int variableCount)
     {
-        count = 0;
+        return TimeMesures.Timer(variableCount, new RecPow());
+    }
+}
+
+public class QuickPow : IExecutable
+{
+    public void Execute(int n)
+    {
+        int num = new Random().Next();
+        Pow(num, n);
+    }
+    
+    public static int Pow(int num, int degree)
+    {
+        int count = 0;
         int c = num;
         int k = degree;
         int result;
@@ -81,10 +113,24 @@ class Pow
 
         return count;
     }
-
-    public static int ClassicQuickPow(int num, int degree)
+    
+    public static long Timer(int variableCount)
     {
-        count = 0;
+        return TimeMesures.Timer(variableCount, new QuickPow());
+    }
+}
+
+public class ClassicQuickPow : IExecutable
+{
+    public void Execute(int n)
+    {
+        int num = new Random().Next();
+        Pow(num, n);
+    }
+    
+    public static int Pow(int num, int degree)
+    {
+        int count = 0;
         int c = num;
         int result = 1;
         int k = degree;
@@ -106,5 +152,10 @@ class Pow
         }
 
         return count;
+    }
+    
+    public static long Timer(int variableCount)
+    {
+        return TimeMesures.Timer(variableCount, new ClassicQuickPow());
     }
 }

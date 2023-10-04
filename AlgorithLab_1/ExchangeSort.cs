@@ -31,7 +31,7 @@ namespace AlgorithLab_1
                 }
             }
         }
-        public long Timer(int variableCount)
+        public static long Timer(int variableCount)
         {
             return TimeMesures.Timer(variableCount, new ExchangeSort());
         }
