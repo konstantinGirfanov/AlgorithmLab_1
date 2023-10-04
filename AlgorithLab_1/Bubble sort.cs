@@ -10,6 +10,8 @@ public class BubbleSort : IExecutable
         int[] randomArray = Program.RandomArray(n);
         Sort(randomArray);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * num;
     
     public static int[] Sort(int[] arr)
     {
@@ -29,7 +31,7 @@ public class BubbleSort : IExecutable
 
         return arr;
     }
-    public long Timer(int variableCount)
+    public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new BubbleSort());
     }

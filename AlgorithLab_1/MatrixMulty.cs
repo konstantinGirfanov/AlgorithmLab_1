@@ -3,13 +3,15 @@ using System.Diagnostics;
 
 class MultiplyMatrix : IExecutable
 {
-    
+
     public void Execute(int n)
     {
         int[,] firstMat = GenerateMatrix(n);
         int[,] secondMat = GenerateMatrix(n);
         Multiply(firstMat, secondMat, n);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * num;
     
     private static int[,] GenerateMatrix(int n)
     {

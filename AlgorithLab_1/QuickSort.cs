@@ -10,6 +10,9 @@ public class QuickSort : IExecutable
         int[] randomArray = Program.RandomArray(n);
         Sort(randomArray);
     }
+
+    public Func<double, double> GetComplexityFunction() => num => num * Math.Log2(num);
+    
     public static void Sort(int[] arr)
     {
         int[] answ = SortArray(arr, 0, arr.Length-1);
@@ -48,7 +51,7 @@ public class QuickSort : IExecutable
         return array;
     }
     
-    public long Timer(int variableCount)
+    public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new QuickSort());
     }

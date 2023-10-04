@@ -3,10 +3,17 @@
     using System;
     using System.Diagnostics;
 
-    class TSort
+    class TSort : IExecutable
     {
         public const int RUN = 32;
 
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            TimSort(randomArray, n);
+        }
+
+        public Func<double, double> GetComplexityFunction() => num => num * Math.Log2(num);
         // This function sorts array from left index to
         // to right index which is of size atmost RUN
         public static void InsertionSort(int[] arr, int left,
@@ -130,14 +137,7 @@
 
         public static long Timer(int variableCount)
         {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            TimSort(randomArray, variableCount);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
+            return TimeMesures.Timer(variableCount, new TSort());
         }
 
         /*public static void Main()
