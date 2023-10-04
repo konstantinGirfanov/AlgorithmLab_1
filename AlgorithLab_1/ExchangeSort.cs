@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 
 namespace AlgorithLab_1
 {
-    public class ExchangeSort : Sorter
+    public class ExchangeSort : IExecutable
     {
-        public static int[] Sort(int[] inputArray) 
+        public void Execute(int n)
+        {
+            int[] randomArray = Program.RandomArray(n);
+            Sort(randomArray);
+        }
+        
+        public static void Sort(int[] inputArray) 
         {
             for (int i = 0; i < inputArray.Length; i++)
             {
@@ -24,19 +30,10 @@ namespace AlgorithLab_1
                     }
                 }
             }
-
-            return inputArray;
         }
-        public static long Timer(int variableCount) 
+        public long Timer(int variableCount)
         {
-            int[] randomArray = Program.RandomArray(variableCount);
-            Stopwatch timer = new();
-
-            timer.Start();
-            Sort(randomArray);
-            timer.Stop();
-
-            return timer.ElapsedMilliseconds;
+            return TimeMesures.Timer(variableCount, new ExchangeSort());
         }
     }
 }

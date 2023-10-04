@@ -3,8 +3,14 @@ using System.Diagnostics;
 
 namespace AlgorythmLab1;
 
-public class BubbleSort : Sorter
+public class BubbleSort : IExecutable
 {
+    public void Execute(int n)
+    {
+        int[] randomArray = Program.RandomArray(n);
+        Sort(randomArray);
+    }
+    
     public static int[] Sort(int[] arr)
     {
         var n = arr.Length;
@@ -23,16 +29,9 @@ public class BubbleSort : Sorter
 
         return arr;
     }
-    public static long Timer(int variableCount)
+    public long Timer(int variableCount)
     {
-        int[] randomArray = Program.RandomArray(variableCount);
-        Stopwatch timer = new();
-
-        timer.Start();
-        Sort(randomArray);
-        timer.Stop();
-
-        return timer.ElapsedMilliseconds;
+        return TimeMesures.Timer(variableCount, new BubbleSort());
     }
 }
    
