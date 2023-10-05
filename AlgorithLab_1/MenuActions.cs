@@ -43,6 +43,7 @@ namespace AlgorithLab_1
                         ConsoleHelper.ClearScreen();
                         Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
                         Program.RequestTheData(menu.Items[menu.SelectedItemIndex].ClassFullName);
+                        Console.WriteLine($"Замеры произведены, результат сохранён по адресу: {Program.SavePath}. Для возврата в меню нажмите любую клавишу... ");
                         Console.ReadKey();
                         break;
                 }
