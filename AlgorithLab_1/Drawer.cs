@@ -9,7 +9,7 @@ public class Drawer
     public static void Draw(List<double> dataX, List<double> dataY, string name, string pathPNG, Type algType)
     {
         Plot plot = new Plot();
-        plot.Title(name.Replace(".Timer", ""));
+        plot.Title(name.Replace(".Timer", "").Replace(".Pow", ""));
         MethodInfo methodInfo = algType.GetMethod("GetComplexityFunction", Type.EmptyTypes); 
         object instance = Activator.CreateInstance(algType); 
         Func<double, double> f = Fit.LinearCombinationFunc(

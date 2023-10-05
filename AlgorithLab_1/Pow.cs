@@ -6,18 +6,17 @@ public class ObviousPow : IExecutable
 {
     public void Execute(int n)
     {
-        int num = new Random().Next();
-        Pow(num, n);
+        Pow(n);
     }
 
     public Func<double, double> GetComplexityFunction() => num => num;
-    
-    public static int Pow(int num, int degree)
+
+    private static int num = new Random().Next();
+    public static long Pow(int degree)
     {
         int count = 0;
         int result = 1;
         int k = 0;
-
         while (k < degree)
         {
             result *= num;
@@ -27,7 +26,7 @@ public class ObviousPow : IExecutable
 
         return count;
     }
-    
+
     public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new ObviousPow());
@@ -38,15 +37,15 @@ public class RecPow : IExecutable
 {
     public void Execute(int n)
     {
-        int num = new Random().Next();
-        Pow(num, n);
+        Pow(n);
     }
 
     public Func<double, double> GetComplexityFunction() => num => num;
-    
-    public static int Pow(int num, int degree)
+
+    private static int count = 0;
+    private static int num = new Random().Next();
+    public static long Pow(int degree)
     {
-        int count = 0;
         if (degree == 0)
         {
             count++;
@@ -54,23 +53,23 @@ public class RecPow : IExecutable
         }
         else
         {
-            int result = Pow(num, degree / 2);
+            count++;
+            long result = Pow(degree / 2);
+            count++;
 
             if (degree % 2 == 1)
             {
-                count++;
                 result = result * result * num;
             }
             else
             {
-                count++;
                 result *= result;
             }
 
             return count;
         }
     }
-    
+
     public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new RecPow());
@@ -81,13 +80,13 @@ public class QuickPow : IExecutable
 {
     public void Execute(int n)
     {
-        int num = new Random().Next();
-        Pow(num, n);
+        Pow(n);
     }
 
-    public Func<double, double> GetComplexityFunction() => num => num;
-    
-    public static int Pow(int num, int degree)
+    public Func<double, double> GetComplexityFunction() => num => Math.Log2(num);
+
+    private static int num = new Random().Next();
+    public static long Pow(int degree)
     {
         int count = 0;
         int c = num;
@@ -120,7 +119,7 @@ public class QuickPow : IExecutable
 
         return count;
     }
-    
+
     public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new QuickPow());
@@ -131,13 +130,13 @@ public class ClassicQuickPow : IExecutable
 {
     public void Execute(int n)
     {
-        int num = new Random().Next();
-        Pow(num, n);
+        Pow(n);
     }
 
-    public Func<double, double> GetComplexityFunction() => num => num;
-    
-    public static int Pow(int num, int degree)
+    public Func<double, double> GetComplexityFunction() => num => Math.Log2(num);
+
+    private static int num = new Random().Next();
+    public static long Pow(int degree)
     {
         int count = 0;
         int c = num;
@@ -162,7 +161,7 @@ public class ClassicQuickPow : IExecutable
 
         return count;
     }
-    
+
     public static long Timer(int variableCount)
     {
         return TimeMesures.Timer(variableCount, new ClassicQuickPow());
