@@ -11,7 +11,7 @@ public class ObviousPow : IExecutable
 
     public Func<double, double> GetComplexityFunction() => num => num;
 
-    private static int num = new Random().Next();
+    private static int num = 2;
     public static long Pow(int degree)
     {
         int count = 0;
