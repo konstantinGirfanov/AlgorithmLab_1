@@ -43,11 +43,12 @@ namespace AlgorithLab_1
                 for (int j = 0; j < testsCount; j++)
                 {
                     timeNotes[j] = ReflexChooseAlg(name, i);
-                    doubleTimeNotes.Add((double) timeNotes[j]);
+                    
                 }
                 stepList.Add(i);
                 long avarageTime = timeNotes.Sum() / testsCount;
                 times[i/steps - 1] = $"{i} {avarageTime}";
+                doubleTimeNotes.Add((double)avarageTime);
             }
             string path = $"{savePath}\\{name}measures.png";
             Drawer.Draw(stepList, doubleTimeNotes, name, path, ReflexGetAlgType(name));

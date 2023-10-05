@@ -180,7 +180,7 @@ class Li : IExecutable
         int finishY = num.Next(0, field.GetLength(0));
         FindShortestPath(field, startX, startY, finishX, finishY);
     }
-}
+
 
     public Func<double, double> GetComplexityFunction() => num => num * num;
     

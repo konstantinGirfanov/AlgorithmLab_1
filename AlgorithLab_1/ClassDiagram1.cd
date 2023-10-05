@@ -58,26 +58,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="AlgorithLab_1.Li">
-    <Position X="12" Y="7.25" Width="1.5" />
-    <NestedTypes>
-      <Class Name="AlgorithLab_1.Li.Node" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Li.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-      <Class Name="AlgorithLab_1.Li.Path" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>Li.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAkAEAAAAAEAAgAAAAAAAAQEgQA=</HashCode>
-      <FileName>Li.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="AlgorithLab_1.ObviousPow" BaseTypeListCollapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
@@ -179,6 +159,26 @@
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
       <FileName>MatrixMulty.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.Li">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="AlgorithLab_1.Li.Node" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Li.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="AlgorithLab_1.Li.Path" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Li.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAkAEAAAAAEAAgAAAAAAAAAEgQA=</HashCode>
+      <FileName>Li.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
