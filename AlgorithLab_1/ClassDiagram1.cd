@@ -31,7 +31,7 @@
   <Class Name="AlgorithLab_1.TimeMesures">
     <Position X="5.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>TimeMesures.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -177,7 +177,7 @@
   <Class Name="AlgorithLab_1.MultiplyMatrix">
     <Position X="13.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAQAAAABAAAAAAAAAAAAAAAAAAAEgAA=</HashCode>
       <FileName>MatrixMulty.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

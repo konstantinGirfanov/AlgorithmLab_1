@@ -14,8 +14,7 @@
         }
 
         public Func<double, double> GetComplexityFunction() => num => num * Math.Log2(num);
-        // This function sorts array from left index to
-        // to right index which is of size atmost RUN
+       
         public static void InsertionSort(int[] arr, int left,
                                          int right)
         {
@@ -32,11 +31,10 @@
             }
         }
 
-        // merge function merges the sorted runs
+       
         public static void Merge(int[] arr, int l, int m, int r)
         {
-            // original array is broken in two parts
-            // left and right array
+           
             int len1 = m - l + 1, len2 = r - m;
             int[] left = new int[len1];
             int[] right = new int[len2];
@@ -49,8 +47,7 @@
             int j = 0;
             int k = l;
 
-            // After comparing, we merge those two array
-            // in larger sub array
+           
             while (i < len1 && j < len2)
             {
                 if (left[i] <= right[j])
@@ -66,8 +63,7 @@
                 k++;
             }
 
-            // Copy remaining elements
-            // of left, if any
+            
             while (i < len1)
             {
                 arr[k] = left[i];
@@ -75,8 +71,7 @@
                 i++;
             }
 
-            // Copy remaining element
-            // of right, if any
+            
             while (j < len2)
             {
                 arr[k] = right[j];
@@ -85,73 +80,42 @@
             }
         }
 
-        // Iterative Timsort function to sort the
-        // array[0...n-1] (similar to merge sort)
+        
         public static void TimSort(int[] arr, int n)
         {
 
-            // Sort individual subarrays of size RUN
+           
             for (int i = 0; i < n; i += RUN)
                 InsertionSort(arr, i,
                               Math.Min((i + RUN - 1), (n - 1)));
 
-            // Start merging from size RUN (or 32).
-            // It will merge
-            // to form size 64, then
-            // 128, 256 and so on ....
+           
             for (int size = RUN; size < n; size = 2 * size)
             {
 
-                // Pick starting point of
-                // left sub array. We
-                // are going to merge
-                // arr[left..left+size-1]
-                // and arr[left+size, left+2*size-1]
-                // After every merge, we increase
-                // left by 2*size
+               
                 for (int left = 0; left < n; left += 2 * size)
                 {
 
-                    // Find ending point of left sub array
-                    // mid+1 is starting point of
-                    // right sub array
+                    
                     int mid = left + size - 1;
                     int right = Math.Min((left + 2 * size - 1),
                                          (n - 1));
 
-                    // Merge sub array arr[left.....mid] &
-                    // arr[mid+1....right]
+                   
                     if (mid < right)
                         Merge(arr, left, mid, right);
                 }
             }
         }
 
-       /*/ Utility function to print the Array
-        public static void PrintArray(int[] arr, int n)
-        {
-            for (int i = 0; i < n; i++)
-                Console.Write(arr[i] + " ");
-            Console.Write("\n");
-        }*/
+       
 
         public static long Timer(int variableCount)
         {
             return TimeMesures.Timer(variableCount, new TSort());
         }
 
-        /*public static void Main()
-        {
-            int[] arr = { -2, 7,  15,  -14, 0, 15,  0, 7,
-                      -7, -4, -13, 5,   8, -14, 12 };
-            int n = arr.Length;
-            Console.Write("Given Array is\n");
-            PrintArray(arr, n);
-
-            TimSort(arr, n);
-
-            Console.Write("After Sorting Array is\n");
-            PrintArray(arr, n);
-        }*/
+       
     }
 }

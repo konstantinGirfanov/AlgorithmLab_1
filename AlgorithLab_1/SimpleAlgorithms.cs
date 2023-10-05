@@ -116,7 +116,7 @@ namespace AlgorithLab_1
         {
             if (stepNumber < inputArray.Length)
                 return inputArray[stepNumber] + 1.5 * GornersStepInto(inputArray, stepNumber + 1);
-            return 0;
+            return 1;
         }
         
         public static long Timer(int variableCount)
