@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AlgorithLab_1
 {
-    public class TimeMesures
+    public class TimeMaesures
     {
         public long ReflexChooseAlg(string name, int variablesCount)
         {

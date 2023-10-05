@@ -18,7 +18,7 @@ namespace AlgorithLab_1
         
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new ConstAlgorythm());
+            return TimeMaesures.Timer(variableCount, new ConstAlgorythm());
         }
     }
     
@@ -44,7 +44,7 @@ namespace AlgorithLab_1
 
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new NaivePolynomial());
+            return TimeMaesures.Timer(variableCount, new NaivePolynomial());
         }
     }
     
@@ -68,7 +68,7 @@ namespace AlgorithLab_1
         
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new MultiplyAlgorythm());
+            return TimeMaesures.Timer(variableCount, new MultiplyAlgorythm());
         }
     }
     
@@ -93,7 +93,7 @@ namespace AlgorithLab_1
 
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new SumAlgorythm());
+            return TimeMaesures.Timer(variableCount, new SumAlgorythm());
         }
     }
     
@@ -121,7 +121,7 @@ namespace AlgorithLab_1
         
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new GornersMethod());
+            return TimeMaesures.Timer(variableCount, new GornersMethod());
         }
     }
 }

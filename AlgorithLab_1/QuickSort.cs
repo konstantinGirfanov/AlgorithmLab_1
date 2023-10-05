@@ -53,6 +53,6 @@ public class QuickSort : IExecutable
     
     public static long Timer(int variableCount)
     {
-        return TimeMesures.Timer(variableCount, new QuickSort());
+        return TimeMaesures.Timer(variableCount, new QuickSort());
     }
 }

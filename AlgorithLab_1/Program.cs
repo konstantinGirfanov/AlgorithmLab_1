@@ -48,7 +48,7 @@ namespace AlgorithLab_1
             int variablesCount = Int32.Parse(input[0]);
             int steps = Int32.Parse(input[1]);
             int testsCount = Int32.Parse(input[2]);
-            TimeMesures timeMesures = new TimeMesures();
+            TimeMaesures timeMesures = new TimeMaesures();
             timeMesures.MeasureTheTime(name, variablesCount, testsCount, steps, SavePath);
         }
 

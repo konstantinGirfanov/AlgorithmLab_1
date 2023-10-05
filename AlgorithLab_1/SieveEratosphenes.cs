@@ -24,6 +24,6 @@ public class SieveEratosphenes : IExecutable
     
     public static long Timer(int variableCount)
     {
-        return TimeMesures.Timer(variableCount, new SieveEratosphenes());
+        return TimeMaesures.Timer(variableCount, new SieveEratosphenes());
     }
 }

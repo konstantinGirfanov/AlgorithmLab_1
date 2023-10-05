@@ -28,11 +28,11 @@
       <FileName>MenuItem.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AlgorithLab_1.TimeMesures">
+  <Class Name="AlgorithLab_1.TimeMaesures">
     <Position X="5.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>TimeMesures.cs</FileName>
+      <FileName>TimeMaesures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AlgorithLab_1.ConsoleHelper">
@@ -184,6 +184,13 @@
       <FileName>Bubble sort.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AlgorithLab_1.Drawer">
+    <Position X="15.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Drawer.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="AlgorithLab_1.IExecutable">
     <Position X="7" Y="2.5" Width="1.75" />

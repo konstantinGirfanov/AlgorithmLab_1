@@ -186,6 +186,6 @@ class Li : IExecutable
     
     public static long Timer(int variableCount)
     {
-        return TimeMesures.Timer(variableCount, new Li());
+        return TimeMaesures.Timer(variableCount, new Li());
     }
 }

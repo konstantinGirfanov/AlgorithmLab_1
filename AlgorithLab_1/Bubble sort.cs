@@ -33,7 +33,7 @@ namespace AlgorithLab_1
         }
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new BubbleSort());
+            return TimeMaesures.Timer(variableCount, new BubbleSort());
         }
     }
 }

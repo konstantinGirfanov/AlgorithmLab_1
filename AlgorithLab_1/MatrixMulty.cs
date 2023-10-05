@@ -45,7 +45,7 @@ class MultiplyMatrix : IExecutable
 
     public static long Timer(int variableCount)
     {
-        return TimeMesures.Timer(variableCount, new MultiplyMatrix());
+        return TimeMaesures.Timer(variableCount, new MultiplyMatrix());
     }
 
 }

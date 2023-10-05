@@ -113,7 +113,7 @@
 
         public static long Timer(int variableCount)
         {
-            return TimeMesures.Timer(variableCount, new TSort());
+            return TimeMaesures.Timer(variableCount, new TSort());
         }
 
        
