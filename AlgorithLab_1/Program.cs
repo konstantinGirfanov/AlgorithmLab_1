@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Xml.Linq;
 
 namespace AlgorithLab_1
 {
@@ -28,7 +29,10 @@ namespace AlgorithLab_1
                 new MenuItem("ClassicQuickPow algorithm", "ClassicQuickPow.Pow"),
                 new MenuItem("MatrixMultiply algorithm", "MultiplyMatrix.Timer"),
                 new MenuItem("Li algorithm", "Li.Timer"),
-                 new MenuItem("Sieve Eratosphenes", "SieveEratosphenes.Timer"),
+                new MenuItem("Sieve Eratosphenes", "SieveEratosphenes.Timer"),
+                new MenuItem("Simple Numbers", "SimpleNumbers.Timer"),
+                new MenuItem("ChooseAlgs", "MenuActions.ChooseAlgs"),
+                new MenuItem("RunAlgs", "Program.RunFewAlgs"),
                 new MenuItem($"Change save path (Current path: {SavePath})", "path"),
                 new MenuItem("Exit", "exit")
             };
@@ -36,20 +40,34 @@ namespace AlgorithLab_1
             MenuActions.MoveThrough(menu);
         }
 
-        public static void RequestTheData(string name)
+        public static void RunFewAlgs(List<string> algs)
+        {
+            ConsoleHelper.ClearScreen();
+            Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
+            List<Data> FewData = new();
+            foreach(string item in algs)
+            {
+                FewData.Add(RequestTheData(item));
+            }
+            string path = $"{SavePath}\\FewAlgsMeasures.png";
+            Drawer.Draw("FewAlgs", path, FewData);
+            /*Console.WriteLine($"Замеры произведены, результат сохранён по адресу: {Program.SavePath}. Для возврата в меню нажмите любую клавишу... ");
+            Console.ReadKey();*/
+        }
+
+        public static Data RequestTheData(string name)
         {
             string[] input = Console.ReadLine().Split(" ");
             if (IsInputCorrect(input) == false) 
             {
                 Console.WriteLine("Некоректный ввод, попробуйте снова");
                 RequestTheData(name);
-                return;
             }
             int variablesCount = Int32.Parse(input[0]);
             int steps = Int32.Parse(input[1]);
             int testsCount = Int32.Parse(input[2]);
             TimeMaesures timeMesures = new TimeMaesures();
-            timeMesures.MeasureTheTime(name, variablesCount, testsCount, steps, SavePath);
+            return timeMesures.MeasureTheTime(name, variablesCount, testsCount, steps, SavePath);
         }
 
 

@@ -2,7 +2,7 @@ namespace AlgorithLab_1;
 
 public class SieveEratosphenes : IExecutable
 {
-    static void SieveEratosthenes(int n)
+    /*static void SieveEratosthenes(int n)
     {
         var numbers = Enumerable.Range(1, n - 1).ToList();
 
@@ -13,9 +13,23 @@ public class SieveEratosphenes : IExecutable
                 numbers.Remove(numbers[i] * j);
             }
         }
+    }*/
+    static void SieveEratosthenes(int n)
+    {
+        int[] numbers = new int[n];
+
+        for (var i = 0; i < numbers.Length; i++)
+        {
+            if (numbers[i] != 0)
+            {
+                for (var j = 2; j < n / i; j++)
+                {
+                    numbers[i * j] = 0;
+                }
+            }
+        }
     }
-    
-    public void Execute(int n)
+        public void Execute(int n)
     {
         SieveEratosthenes(n);
     }

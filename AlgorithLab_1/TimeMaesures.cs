@@ -23,7 +23,7 @@ namespace AlgorithLab_1
             object instance = Activator.CreateInstance(type);
             return (long)methodInfo.Invoke(instance, new object[] { variablesCount });
         }
-        public Type ReflexGetAlgType(string name)
+        public static Type ReflexGetAlgType(string name)
         {
             string[] classAndMethodNames = name.Split('.');
             string className = $"AlgorithLab_1.{classAndMethodNames[0]}";
@@ -32,7 +32,7 @@ namespace AlgorithLab_1
 
 
         }
-        public void MeasureTheTime(string name, int variablesCount, int testsCount, int steps, string savePath)
+        public Data MeasureTheTime(string name, int variablesCount, int testsCount, int steps, string savePath)
         {
             long[] timeNotes = new long[testsCount];
             List<double> doubleTimeNotes = new List<double>();
@@ -51,7 +51,8 @@ namespace AlgorithLab_1
                 doubleTimeNotes.Add((double)avarageTime);
             }
             string path = $"{savePath}\\{name}measures.png";
-            Drawer.Draw(stepList, doubleTimeNotes, name, path, ReflexGetAlgType(name));
+            //Drawer.Draw(stepList, doubleTimeNotes, name, path, ReflexGetAlgType(name));
+            return new Data(doubleTimeNotes, stepList, name, ReflexGetAlgType(name));
             //File.WriteAllLines(path, times);
         }
 
