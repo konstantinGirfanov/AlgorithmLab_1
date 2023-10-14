@@ -6,7 +6,8 @@ namespace AlgorithLab_1
 {
     class Program
     {
-        public static string SavePath = "C:\\Users\\User\\Desktop";
+        //public static string SavePath = "C:\\Users\\User\\Desktop";
+        public static string SavePath = "C:\\test";
 
         static void Main()
         {
@@ -42,21 +43,22 @@ namespace AlgorithLab_1
 
         public static void RunFewAlgs(List<string> algs)
         {
-            ConsoleHelper.ClearScreen();
-            Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
-            List<Data> FewData = new();
-            foreach(string item in algs)
+            if(algs.Count != 0)
             {
-                FewData.Add(RequestTheData(item));
+                ConsoleHelper.ClearScreen();
+                List<Data> FewData = new();
+                foreach (string item in algs)
+                {
+                    FewData.Add(RequestTheData(item));
+                }
+                Drawer.Draw("FewAlgs", Program.SavePath, FewData);
             }
-            string path = $"{SavePath}\\FewAlgsMeasures.png";
-            Drawer.Draw("FewAlgs", path, FewData);
-            /*Console.WriteLine($"Замеры произведены, результат сохранён по адресу: {Program.SavePath}. Для возврата в меню нажмите любую клавишу... ");
-            Console.ReadKey();*/
         }
 
         public static Data RequestTheData(string name)
         {
+            Console.WriteLine($"Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы) для алгоритма {name.Replace(".Timer","")}");
+
             string[] input = Console.ReadLine().Split(" ");
             if (IsInputCorrect(input) == false) 
             {

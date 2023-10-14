@@ -29,7 +29,7 @@ public class SimpleNumbers : IExecutable
         SimpleNums(n);
     }
 
-    public Func<double, double> GetComplexityFunction() => num => num * num;
+    public Func<double, double> GetComplexityFunction() => num => num;
 
     public static long Timer(int variableCount)
     {

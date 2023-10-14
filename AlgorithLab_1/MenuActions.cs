@@ -28,7 +28,8 @@ namespace AlgorithLab_1
                             menu.SelectedItemIndex--;
                         break;
                     case ConsoleKey.Enter:
-                        if (menu.Items[menu.SelectedItemIndex].ClassFullName == "exit") Environment.Exit(0);
+                        if (menu.Items[menu.SelectedItemIndex].ClassFullName == "exit")
+                            Environment.Exit(0);
                         if(menu.Items[menu.SelectedItemIndex].ClassFullName == "path")
                         {
                             Program.ChangeTheSavePath();
@@ -47,19 +48,16 @@ namespace AlgorithLab_1
                             ChooseAlgs(menu, algs);
                         }
 
-                        if (menu.Items[menu.SelectedItemIndex].ClassFullName == "Program.RunFewAlgs")
+                        if (menu.Items[menu.SelectedItemIndex].ClassFullName != "Program.RunFewAlgs")
                         {
-                            if(algs.Count != 0)
-                            {
-                                Program.RunFewAlgs(algs);
-                            }
-                        }
+                            ConsoleHelper.ClearScreen();
+                            
+                            Data algData = Program.RequestTheData(menu.Items[menu.SelectedItemIndex].ClassFullName);
+                            Drawer.Draw(menu.Items[menu.SelectedItemIndex].ClassFullName, Program.SavePath, new List<Data> { algData });
 
-                        ConsoleHelper.ClearScreen();
-                        Console.WriteLine("Введите максимальный размер входных данных, шаг и количество проверок(через одиночные пробелы)");
-                        Program.RequestTheData(menu.Items[menu.SelectedItemIndex].ClassFullName);
-                        Console.WriteLine($"Замеры произведены, результат сохранён по адресу: {Program.SavePath}. Для возврата в меню нажмите любую клавишу... ");
-                        Console.ReadKey();
+                            Console.WriteLine($"Замеры произведены, результат сохранён по адресу: {Program.SavePath}. Для возврата в меню нажмите любую клавишу... ");
+                            Console.ReadKey();
+                        }
                         break;
                 }
             }
@@ -89,17 +87,10 @@ namespace AlgorithLab_1
 
         private static void ChooseAlgs(Menu menu, List<string> algs)
         {
-            /*foreach(MenuItem item in menu.Items)
-            {
-                if(item.ClassFullName == "path" || item.ClassFullName == "MenuActions.ChooseAlgs")
-                {
-                    menu.Items.Remove(item);
-                }
-            }*/
-
             while (true)
             {
                 ConsoleHelper.ClearScreen();
+                Console.WriteLine("Выберите несколько алгоритмов:");
                 ShowTheMenu(menu);
                 ShowAlgs(algs);
                 ConsoleKeyInfo pressedKey = Console.ReadKey();
@@ -125,11 +116,14 @@ namespace AlgorithLab_1
                         if (menu.Items[menu.SelectedItemIndex].ClassFullName == "Program.RunFewAlgs")
                         {
                             Program.RunFewAlgs(algs);
+                            algs.Clear();
+                            break;
                         }
                         if(menu.Items[menu.SelectedItemIndex].ClassFullName != "path" &&
                             menu.Items[menu.SelectedItemIndex].ClassFullName != "MenuActions.ChooseAlgs")
                         {
-                            algs.Add(menu.Items[menu.SelectedItemIndex].ClassFullName);
+                            if(!algs.Contains(menu.Items[menu.SelectedItemIndex].ClassFullName))
+                                algs.Add(menu.Items[menu.SelectedItemIndex].ClassFullName);
                         }
                         break;
                 }

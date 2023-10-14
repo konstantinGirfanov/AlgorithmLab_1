@@ -34,7 +34,7 @@ public class SieveEratosphenes : IExecutable
         SieveEratosthenes(n);
     }
 
-    public Func<double, double> GetComplexityFunction() => num => num * Math.Log2(num);
+    public Func<double, double> GetComplexityFunction() => num => num;
     
     public static long Timer(int variableCount)
     {
